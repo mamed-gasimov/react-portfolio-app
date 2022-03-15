@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import './Header.scss';
 import { images } from '../../assets/images';
+import { AppWrap } from '../../wrappers';
+import './Header.scss';
 
 const scaleVariants = {
     whileInView: {
@@ -71,7 +72,7 @@ const Header: FC = () => {
     );
 
     return (
-        <div id='home' className='app__header app__flex'>
+        <div className='app__header app__flex'>
             {headerInfoMotionDiv}
             {headerImageMotionDiv}
             {headerCircleMotionDiv}
@@ -79,4 +80,4 @@ const Header: FC = () => {
     )
 }
 
-export default Header;
+export default AppWrap(Header, 'home');

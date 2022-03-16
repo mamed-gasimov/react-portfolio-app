@@ -1,18 +1,13 @@
 import { FC } from 'react';
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const SocialMedia: FC = () => {
     return (
-        <div className="app__social">
+        <div className='app__social'>
             <div>
-                <BsTwitter />
-            </div>
-            <div>
-                <FaFacebookF />
-            </div>
-            <div>
-                <BsInstagram />
+                <a href='https://github.com/mamed-gasimov' target='_blank' rel="noreferrer">
+                    <FaGithub />
+                </a>
             </div>
         </div>
     )

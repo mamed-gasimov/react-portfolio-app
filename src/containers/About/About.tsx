@@ -21,7 +21,7 @@ const About: FC = () => {
     return (
         <div className='app__about-container'>
             <h2 className='head-text head-text-about'>
-                I Know that <span>Good Design</span> <br />means  <span>Good Business</span>
+                I <span>love</span> <br />being <span>Developer</span>
             </h2>
             <div className='app__profiles'>
                 {abouts.map((about, index) => (

@@ -22,7 +22,7 @@ const Skills: FC = () => {
 
         client.fetch(skillsQuery)
             .then((data) => {
-                setSkills(data as SkillType[]);
+                setSkills(data.reverse() as SkillType[]);
             })
             .catch(e => console.log('Error in Skills container', e));
     }, []);

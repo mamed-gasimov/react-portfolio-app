@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Navbar } from './components';
-import { About, Header, Footer, Work, Skills, Testimonial } from './containers';
+import { About, Header, Footer, Work, Skills } from './containers';
 import './App.scss';
 
 const App: FC = () => (
@@ -10,7 +10,6 @@ const App: FC = () => (
         <About />
         <Work />
         <Skills />
-        <Testimonial />
         <Footer />
     </div>
 );

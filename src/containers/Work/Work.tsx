@@ -38,6 +38,62 @@ const Work: FC = () => {
         }, 500);
     };
 
+    const onBiggerScreen = (work: WorkType) => (
+        <motion.div
+            whileHover={{ opacity: [0, 1] }}
+            transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+            className="app__work-hover app__flex"
+        >
+            <a href={work.projectLink} target="_blank" rel="noreferrer">
+                <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.90] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                >
+                    <AiFillEye />
+                </motion.div>
+            </a>
+            <a href={work.codeLink} target="_blank" rel="noreferrer">
+                <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.90] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                >
+                    <AiFillGithub />
+                </motion.div>
+            </a>
+        </motion.div>
+    )
+
+    const onSmallerScreen = (work: WorkType) => (
+        <div
+            className="app__flex"
+        >
+            <a href={work.projectLink} target="_blank" rel="noreferrer">
+                <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                    style={{ marginRight: 20, color: '#000' }}
+                >
+                    <AiFillEye />
+                </motion.div>
+            </a>
+            <a href={work.codeLink} target="_blank" rel="noreferrer">
+                <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                    style={{ color: '#000' }}
+                >
+                    <AiFillGithub />
+                </motion.div>
+            </a>
+        </div>
+    )
+
     return (
         <>
             <h2 className='head-text'>My Creative <span>Portfolio</span> Section</h2>
@@ -63,32 +119,7 @@ const Work: FC = () => {
                             className="app__work-img app__flex"
                         >
                             <img src={String(urlFor(work.imgUrl))} alt={work.name} />
-                            <motion.div
-                                whileHover={{ opacity: [0, 1] }}
-                                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                                className="app__work-hover app__flex"
-                            >
-                                <a href={work.projectLink} target="_blank" rel="noreferrer">
-                                    <motion.div
-                                        whileInView={{ scale: [0, 1] }}
-                                        whileHover={{ scale: [1, 0.90] }}
-                                        transition={{ duration: 0.25 }}
-                                        className="app__flex"
-                                    >
-                                        <AiFillEye />
-                                    </motion.div>
-                                </a>
-                                <a href={work.codeLink} target="_blank" rel="noreferrer">
-                                    <motion.div
-                                        whileInView={{ scale: [0, 1] }}
-                                        whileHover={{ scale: [1, 0.90] }}
-                                        transition={{ duration: 0.25 }}
-                                        className="app__flex"
-                                    >
-                                        <AiFillGithub />
-                                    </motion.div>
-                                </a>
-                            </motion.div>
+                            {window.innerWidth > 900 && onBiggerScreen(work)}
                         </div>
                         <div className="app__work-content app__flex">
                             <h4 className="bold-text">{work.title}</h4>
@@ -98,6 +129,7 @@ const Work: FC = () => {
                                 <p className="p-text">{work.tags[0]}</p>
                             </div>
                         </div>
+                        {window.innerWidth < 900 && onSmallerScreen(work)}
                     </div>
                 ))}
             </motion.div>

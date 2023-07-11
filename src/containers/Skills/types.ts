@@ -1,16 +1,16 @@
 export type SkillType = {
-    name: string;
-    icon: string;
-    bgColor?: string;
-}
+  name: string;
+  icon: string;
+  bgColor?: string;
+};
 
 export type ExperienceType = {
-    year: number;
-    works: ExperienceWorkType[];
-}
+  year: string;
+  works: ExperienceWorkType[];
+};
 
 type ExperienceWorkType = {
-    name: string;
-    company: string;
-    desc: string;
-}
+  name: string;
+  company: string;
+  desc: string;
+};

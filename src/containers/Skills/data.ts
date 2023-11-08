@@ -2,7 +2,7 @@ import { ExperienceType } from "./types";
 
 export const experiences: ExperienceType[] = [
   {
-    year: "10.22 - currently",
+    year: "10.22 - 11.23",
     works: [
       {
         name: "Frontend Developer",

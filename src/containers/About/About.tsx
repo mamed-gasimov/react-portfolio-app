@@ -1,8 +1,9 @@
 import { FC, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import { client, urlFor } from "../../services/client";
-import { AboutType } from "./types";
 import { AppWrap, MotionWrap } from "../../wrappers";
+import { AboutType } from "./types";
 import "./About.scss";
 
 const About: FC = () => {

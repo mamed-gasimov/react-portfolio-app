@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import { Navbar } from "./components";
 import { About, Header, Work, Skills } from "./containers";
 import "./App.scss";

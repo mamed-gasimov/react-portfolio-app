@@ -32,7 +32,7 @@ const Header: FC = () => {
         </div>
         <div className="tag-cmp app__flex">
           <p className="p-text">Web Developer</p>
-          <p className="p-text">React / Next.js</p>
+          <p className="p-text">React / Node JS</p>
         </div>
       </div>
     </motion.div>
